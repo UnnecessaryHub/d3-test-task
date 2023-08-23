@@ -1,0 +1,26 @@
+{
+  "name": "d3-test-task",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.8.1",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vue-tsc": "^1.8.5",
+    "eslint": "8.41.0",
+    "eslint-config-gearonix": "^1.0.3",
+    "eslint-kit": "10.0.0",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "prettier": "3.0.0"
+  }
+}
