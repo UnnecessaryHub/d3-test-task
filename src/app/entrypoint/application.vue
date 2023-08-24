@@ -6,6 +6,8 @@ import {ConnectWallet} from '@/features/connect-wallet'
 
 <template>
   <notifications position="bottom right"/>
-  <Transactions/>
-  <ConnectWallet />
+  <div class="container">
+    <Transactions/>
+    <ConnectWallet />
+  </div>
 </template>
