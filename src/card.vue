@@ -35,6 +35,8 @@ onMounted(() => {
 </script>
 
 <template>
+  <v-card-title class="text-h6 text-md-h5
+    text-lg-h5 mt-[25px] mb-[25px]">5 Latest transactions</v-card-title>
   <v-table>
     <thead>
     <tr>

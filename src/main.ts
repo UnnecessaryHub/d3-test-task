@@ -7,6 +7,7 @@ import { apolloProvider } from '@/shared/config'
 
 import App from './App.vue'
 
+import './tailwind.css'
 import './style.css'
 
 import 'vuetify/styles'
