@@ -1,5 +1,15 @@
 import { createApp } from 'vue'
-import './style.css'
+import VueConnectWallet from 'vue-connect-wallet'
+
 import App from './App.vue'
 
-createApp(App).mount('#app')
+import './style.css'
+
+const bootstrap = () => {
+  const app = createApp(App)
+  app.use(VueConnectWallet)
+
+  app.mount('#app')
+}
+
+bootstrap()

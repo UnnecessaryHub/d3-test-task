@@ -1,1 +1,1 @@
-export {ApolloMiddleware} from './apollo-middleware.ts'
+export { ApolloMiddleware } from './apollo-middleware.ts'
