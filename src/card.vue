@@ -32,12 +32,19 @@ onMounted(() => {
   fetchQueries()
 })
 
+const expand = ref(false)
+const expand2 = ref(false)
+
 </script>
 
 <template>
+  <v-scroll-x-transition>
   <v-card-title class="text-h6 text-md-h5
-    text-lg-h5 mt-[25px] mb-[25px]">5 Latest transactions</v-card-title>
-  <v-table>
+    text-lg-h5 mt-[25px] mb-[25px]"  v-show="transactions.length > 0"
+     >5 Latest transactions</v-card-title>
+    </v-scroll-x-transition>
+  <v-scroll-x-transition>
+  <v-table  v-show="transactions.length > 0">
     <thead>
     <tr>
       <th class="text-left">
@@ -66,4 +73,5 @@ onMounted(() => {
     </tr>
     </tbody>
   </v-table>
+  </v-scroll-x-transition>
 </template>

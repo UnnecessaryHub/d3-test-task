@@ -34,18 +34,20 @@ const connectWallet = async () => {
 <template>
     <v-card-title class="text-h6 text-md-h5
     text-lg-h5 mt-[25px] mb-[25px]">Connect your wallet</v-card-title>
-  <div class="max-w-[300px] m-center">
-    <v-btn
-        :disabled="loading"
-        :loading="loading"
-        block
-        class="text-none mb-4"
-        color="indigo-darken-3"
-        size="x-large"
-        variant="flat"
-        @click="connectWallet"
-    >
-      Verify and continue
-    </v-btn>
-  </div>
+  <v-fade-transition>
+    <div class="max-w-[300px] m-center" v-show="true">
+      <v-btn
+          :disabled="loading"
+          :loading="loading"
+          block
+          class="text-none mb-4"
+          color="indigo-darken-3"
+          size="x-large"
+          variant="flat"
+          @click="connectWallet"
+      >
+        Verify and continue
+      </v-btn>
+    </div>
+  </v-fade-transition>
 </template>
