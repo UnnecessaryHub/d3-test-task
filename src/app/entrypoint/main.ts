@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 
 import { apolloProvider } from '@/shared/config'
+import Notifications from '@kyvg/vue3-notification'
 
 import { vuetifyPlugin } from '../plugins'
 
@@ -14,6 +15,7 @@ const bootstrap = () => {
   app.use(apolloProvider)
 
   app.use(vuetifyPlugin)
+  app.use(Notifications)
 
   app.mount('#app')
 }

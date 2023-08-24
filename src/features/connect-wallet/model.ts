@@ -1,8 +1,8 @@
-import { createEffect, createEvent, createStore } from 'effector'
+import { createEffect, createEvent, createStore, sample } from 'effector'
+
+import { notify } from '@kyvg/vue3-notification'
 
 export const $isMetataskSupported = createStore<boolean>(false)
-
-export const $walletAddress = createStore<boolean>(false)
 
 export const setIsMetataskSupported = createEvent<boolean>()
 
@@ -11,7 +11,10 @@ $isMetataskSupported.on(setIsMetataskSupported, (_, val) => val)
 export const connectWalletFx = createEffect<boolean, string>(
   async (isSupported) => {
     if (!isSupported) {
-      console.log('connectWallet: not supported.')
+      notify({
+        title: 'MetaTask is not installed.',
+        type: 'error'
+      })
       return
     }
 
@@ -25,4 +28,27 @@ export const connectWalletFx = createEffect<boolean, string>(
   }
 )
 
-$walletAddress.on(connectWalletFx.doneData, (_, val) => val)
+// eslint-disable-next-line effector/no-useless-methods
+sample({
+  clock: connectWalletFx.doneData,
+  fn: (address: string) => {
+    if (!address) {
+      return
+    }
+
+    notify({
+      title: 'MetaTask connected',
+      text: `Your wallet address: ${address}`
+    })
+  }
+})
+
+sample({
+  clock: connectWalletFx.fail,
+  fn: () => {
+    notify({
+      title: 'An error occurred.',
+      type: 'error'
+    })
+  }
+})

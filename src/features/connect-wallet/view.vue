@@ -1,7 +1,6 @@
 <script lang="ts" setup="">
-import {checkMetaTaskSupport} from '@/features/connect-wallet/lib'
+import {checkMetaTaskSupport} from './lib'
 import {connectWalletFx} from './model'
-import {$walletAddress} from './model'
 import {$isMetataskSupported, setIsMetataskSupported} from './model'
 import {useStore} from '@/shared/hooks'
 import {Title} from '@/shared/ui/title'
@@ -12,7 +11,6 @@ import {ref} from 'vue'
 const loading = ref<boolean>(false)
 
 const isMetataskSupported = useStore($isMetataskSupported)
-const walletAddress = useStore($walletAddress)
 const showTransition = useStore($showTransition)
 
 
