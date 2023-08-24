@@ -10,6 +10,7 @@ export const getLatestTransactionsQuery = gql`
       }
       valueUSD
       tx
+      id
     }
   }
 `

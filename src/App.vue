@@ -1,10 +1,9 @@
 <script setup lang="ts">
 
-import {getLatestTransactionsQuery} from '@/get-latest-transactions.query'
-import {ApolloMiddleware} from '@/shared/apollo'
 import {onMounted} from 'vue'
 import {ref} from 'vue'
-
+import Card from './card.vue'
+import ConnectWallet from './connect-wallet.vue'
 
 
 const isMetataskSupported = ref(false)
@@ -28,23 +27,10 @@ const connectWallet = async () => {
   console.log(account)
 }
 
-const apollo = new ApolloMiddleware()
-
-const fetchQueries = async () => {
-  const resource = await apollo.request({
-    gql: getLatestTransactionsQuery,
-    method: 'swaps'
-  }, null, 'query')
-
-  console.log(resource)
-}
-
-onMounted(() => {
-  fetchQueries()
-})
 
 </script>
 
 <template>
   <button @click="connectWallet">connect</button>
+  <Card/>
 </template>
