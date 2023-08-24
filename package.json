@@ -10,6 +10,7 @@
     "deploy": "npm run build && gh-pages -d dist"
   },
   "dependencies": {
+    "@kyvg/vue3-notification": "^3.0.1",
     "@urql/vue": "^1.1.2",
     "@vue/apollo-option": "4.0.0-beta.5",
     "apollo-boost": "^0.4.9",
@@ -17,6 +18,8 @@
     "apollo-client": "^2.6.10",
     "apollo-link": "^1.2.14",
     "apollo-link-http": "^1.5.17",
+    "effector": "^22.8.6",
+    "effector-vue": "^22.2.0",
     "graphql": "^16.8.0",
     "graphql-tag": "^2.12.6",
     "vue": "^3.3.4",

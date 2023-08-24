@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@kyvg/vue3-notification':
+    specifier: ^3.0.1
+    version: 3.0.1(vue@3.3.4)
   '@urql/vue':
     specifier: ^1.1.2
     version: 1.1.2(graphql@16.8.0)(vue@3.3.4)
@@ -26,6 +29,12 @@ dependencies:
   apollo-link-http:
     specifier: ^1.5.17
     version: 1.5.17(graphql@16.8.0)
+  effector:
+    specifier: ^22.8.6
+    version: 22.8.6
+  effector-vue:
+    specifier: ^22.2.0
+    version: 22.2.0(@vue/reactivity@3.3.4)(@vue/runtime-core@3.3.4)(effector@22.8.6)(vue@3.3.4)
   graphql:
     specifier: ^16.8.0
     version: 16.8.0
@@ -742,6 +751,14 @@ packages:
       '@jridgewell/resolve-uri': 3.1.1
       '@jridgewell/sourcemap-codec': 1.4.15
     dev: true
+
+  /@kyvg/vue3-notification@3.0.1(vue@3.3.4):
+    resolution: {integrity: sha512-6g4Sm03PM1Cc0atHHqQk5+ZtekXaxEXf9YVhfTv9FnUiNYKdquwVMuysj0cJabobsNSQSOASjqMg3+ndV2SqWw==}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      vue: 3.3.4
+    dev: false
 
   /@next/eslint-plugin-next@13.4.19:
     resolution: {integrity: sha512-N/O+zGb6wZQdwu6atMZHbR7T9Np5SUFUjZqCbj0sXm+MwQO35M8TazVB4otm87GkXYs2l6OPwARd3/PUWhZBVQ==}
@@ -1753,10 +1770,24 @@ packages:
       esutils: 2.0.3
     dev: true
 
+  /effector-vue@22.2.0(@vue/reactivity@3.3.4)(@vue/runtime-core@3.3.4)(effector@22.8.6)(vue@3.3.4):
+    resolution: {integrity: sha512-ltiGrWizwBFXuIL0KuW11GXl253/AI/xSnSR1EtWlgDobzzEZ9G6gV6eUmcC36S4Jo34K7FJpKTmE/ODfGED6w==}
+    engines: {node: '>=11.0.0'}
+    peerDependencies:
+      '@vue/reactivity': ^3.0.2
+      '@vue/runtime-core': ^3.0.2
+      effector: ^22.0.2
+      vue: '*'
+    dependencies:
+      '@vue/reactivity': 3.3.4
+      '@vue/runtime-core': 3.3.4
+      effector: 22.8.6
+      vue: 3.3.4
+    dev: false
+
   /effector@22.8.6:
     resolution: {integrity: sha512-Bkg/rlPs7J4dmOFGPLLcL7X0SZeA8WdRnyC2X4tGVo7i6M8oxYwtNOkEUact/zIT/MgqTGm9A8T40dPnr8oXmA==}
     engines: {node: '>=11.0.0'}
-    dev: true
 
   /electron-to-chromium@1.4.499:
     resolution: {integrity: sha512-0NmjlYBLKVHva4GABWAaHuPJolnDuL0AhV3h1hES6rcLCWEIbRL6/8TghfsVwkx6TEroQVdliX7+aLysUpKvjw==}

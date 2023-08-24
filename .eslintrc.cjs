@@ -20,6 +20,7 @@ module.exports = configure({
             root: './'
         }),
         presets.react(),
+        presets.effector()
     ],
     extend: {
         root: true,
