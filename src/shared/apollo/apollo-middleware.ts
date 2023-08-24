@@ -21,9 +21,12 @@ interface ToPayload<A extends AnyObject> {
  */
 
 export class ApolloMiddleware {
-  public async request<Payload extends AnyObject, Args extends AnyObject>(
+  public async request<
+    Payload extends AnyObject,
+    Args extends Nullable<AnyObject>
+  >(
     mutation: ApolloOperation,
-    args?: Args,
+    args: Nullable<Args>,
     type: OperationType = 'query'
   ): Promise<[Nullable<WithTypeName<Payload>>, Nullable<string>]> {
     const options = {

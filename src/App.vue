@@ -1,24 +1,9 @@
 <script setup lang="ts">
 
+import {getLatestTransactionsQuery} from '@/get-latest-transactions.query'
 import {ApolloMiddleware} from '@/shared/apollo'
-import {apolloClient} from '@/shared/config'
-import gql from 'graphql-tag'
 import {onMounted} from 'vue'
 import {ref} from 'vue'
-
-
-const gqlRequest = gql`
-     {
-    swaps(first: 5, orderDirection: desc, orderBy:timestamp) {
-    caller
-    timestamp
-    userAddress {
-      id
-    }
-    valueUSD
-    tx
-  }
-}`
 
 
 
@@ -46,19 +31,17 @@ const connectWallet = async () => {
 const apollo = new ApolloMiddleware()
 
 const fetchQueries = async () => {
-  const resource = await apolloClient.query({
-    query: gqlRequest
-  })
+  const resource = await apollo.request({
+    gql: getLatestTransactionsQuery,
+    method: 'swaps'
+  }, null, 'query')
 
-  console.log(`SUCCESS`)
   console.log(resource)
 }
 
 onMounted(() => {
   fetchQueries()
 })
-
-
 
 </script>
 
